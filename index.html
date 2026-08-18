@@ -1,0 +1,544 @@
+<!DOCTYPE HTML>
+<html lang="en">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <title>Alexis Dhermy</title>
+    <meta name="author" content="Alexis Dhermy">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><rect width='100' height='100' rx='20' fill='%232c3e50'/><text x='50%' y='55%' dominant-baseline='central' text-anchor='middle' font-family='sans-serif' font-size='46' font-weight='bold' fill='%23ffffff'>AD</text></svg>">
+    <link rel="stylesheet" type="text/css" href="stylesheet.css">
+    <style>
+    .section-title {
+      margin-top: 4px;
+    }
+
+    .section-title td {
+      padding: 20px 20px 6px 20px;
+      vertical-align: middle;
+    }
+
+    .section-body {
+      margin-top: 0;
+    }
+
+    .section-body td {
+      padding: 6px 20px 20px 20px;
+      vertical-align: top;
+    }
+
+    .section-title h2 {
+      margin: 0;
+    }
+
+    .section-body p,
+    .section-body ul {
+      margin-top: 8px;
+      margin-bottom: 0;
+    }
+
+    /* NEW: project thumbnail click/hover styling */
+    .project-thumb {
+      display:inline-block;
+      border-radius:6px;
+      overflow:hidden;
+      transition:transform .18s ease;
+      text-decoration:none;
+    }
+    .project-thumb img {
+      display:block;
+      width:100%;
+      max-width:180px;
+      height:110px;
+      object-fit:cover;
+      border-radius:0; /* image rounded handled by container if needed */
+    }
+    .project-thumb:hover {
+      transform:scale(1.04);
+    }
+
+    /* normalize list padding for sections (used for News) */
+    .section-list {
+      margin: 8px 0 0 0;
+      padding-left: 20px; /* same as other lists */
+    }
+
+    /* last-updates badge (top-right) */
+    .page-wrap {
+      width:100%;
+      max-width:800px;
+      margin-right:auto;
+      margin-left:auto;
+      position:relative; /* anchor for absolute badge */
+    }
+
+    .top-controls {
+      position:absolute;
+      top:12px;
+      right:12px;
+      display:flex;
+      flex-direction:column;
+      align-items:flex-end;
+      gap:8px;
+      z-index:10;
+    }
+
+    .top-control {
+      display:inline-flex;
+      align-items:center;
+      justify-content:center;
+      min-height:28px;
+      padding:6px 10px;
+      border-radius:6px;
+      border:1px solid rgba(0,0,0,0.08);
+      background: rgba(255,255,255,0.9);
+      color:#444;
+      font-size:12px;
+      line-height:1;
+      box-shadow: 0 1px 2px rgba(0,0,0,0.05);
+      cursor:pointer;
+      user-select:none;
+      white-space:nowrap;
+    }
+
+    #last-updates {
+      pointer-events:none;
+      cursor:default;
+    }
+
+    .dark .top-control {
+      border-color: rgba(255,255,255,0.18);
+      background: rgba(20,20,24,0.95);
+      color: #e8eef6;
+    }
+
+    :root{
+      --bg: #ffffff;
+      --text: #222222;
+      --muted: #666666;
+      --card-bg: rgba(255,255,255,0.95);
+      --accent: #2c3e50;
+      --link: #0645ad;
+    }
+
+    .dark {
+      --bg: #0f1112;
+      --text: #e8eef6;
+      --muted: #bfc9d6;
+      --card-bg: rgba(20,20,24,0.95);
+      --accent: #9fb4c9;
+      --link: #7fb0ff;
+    }
+
+    body {
+      background: var(--bg);
+      color: var(--text);
+    }
+
+    .dark body,
+    .dark td,
+    .dark p,
+    .dark li,
+    .dark h2,
+    .dark h1,
+    .dark span,
+    .dark .papertitle,
+    .dark .name {
+      color: var(--text) !important;
+    }
+
+    .dark a {
+      color: var(--link) !important;
+    }
+
+    .dark span[style*="color:#666"] {
+      color: var(--muted) !important;
+    }
+
+    .dark .section-body td,
+    .dark .section-title td,
+    .dark .top-control {
+      background: transparent !important;
+    }
+
+    .dark .top-control {
+      border-color: rgba(255,255,255,0.18);
+    }
+    </style>
+  </head>
+
+  <body>
+    <!-- wrap page content so badge aligns to content, not viewport -->
+    <div class="page-wrap">
+      <div class="top-controls">
+        <div id="last-updates" class="top-control" aria-hidden="true"></div>
+        <button id="theme-toggle" class="top-control" type="button" aria-pressed="false" aria-label="Toggle dark mode">Dark</button>
+      </div>
+
+      <table style="width:100%;max-width:800px;border:0px;border-spacing:0px;border-collapse:separate;margin-right:auto;margin-left:auto;"><tbody>
+        <tr style="padding:0px">
+          <td style="padding:0px">
+            
+            <!-- Header / Intro Section -->
+            <table style="width:100%;border:0px;border-spacing:0px;border-collapse:separate;margin-right:auto;margin-left:auto;"><tbody>
+              <tr style="padding:0px">
+
+                <!-- Left Column: Bio Text -->
+                <td style="padding:2.5%;width:60%;vertical-align:middle">
+                  <p class="name" style="text-align: center;">
+                    Alexis DHERMY
+                  </p>
+                  <p>
+                    Bonjour! 🇫🇷<br>
+                    I am a final-year graduate student finishing my Master of Science in Engineering at <a href="https://www.epf.fr/en" target="_blank"><strong>EPF Engineering School</strong></a> (Paris, France), specializing in Computer Science and Artificial Intelligence.
+                  </p>
+                  <p>
+                    Following a strong foundation in mathematics and physics through an intensive preparatory cycle, I built my core AI foundations during an exchange semester at <a href="https://www.skku.edu/eng/" target="_blank"><strong>Sungkyunkwan University (SKKU)</strong></a> in Seoul.
+                  </p>
+                  <p>
+                    My journey bridges applied AI engineering and research: I developed LLM-driven multimodal dialogue systems for the Pepper humanoid robot at <a href="https://www.afiklmem.com/en" target="_blank"><strong>Air France Industries</strong></a> and architected an enterprise RAG system during my Master's thesis at <a href="https://www.viridiengroup.com/" target="_blank"><strong>Viridien</strong></a> (R&D Dept.).
+                  </p>
+                  <p>
+                    Working closely with research teams solidified my desire to pursue fundamental AI research rather than pure engineering. Driven by my academic experience in Seoul, I am now aiming to join an <strong>M.S. in AI in South Korea (Spring 2027)</strong>.
+                  </p>
+                  <p>
+                    <div style="margin:4px 0 8px 0;color:#666;"><em>
+                    P.S. When I am not behind a screen, I train and compete in track and field. I specialize in the 100m, 200m, and the long jump.
+                    </em></div>
+                  </p>
+                </td>
+                
+                <!-- Right Column: Photo + Contact Info Underneath -->
+                <td style="padding:2.5%;width:40%;max-width:40%;vertical-align:top;text-align:center;">
+                  <div style="margin-top:100px;">
+                  <a href="images/avatar-2.jpeg" target="_blank" rel="noopener">
+                    <img style="width:220px;max-width:85%;object-fit:cover;border-radius:50%;display:block;margin:0 auto 15px auto;" alt="profile photo" src="images/avatar-2.jpeg" class="hoverZoomLink">
+                  </a>
+                  <p style="text-align:center;font-size:14px;line-height:1.6;margin:0;">
+                    <a href="mailto:a.dhermy@live.com">Email</a> &nbsp;/&nbsp;
+                    <a href="data/CV_Alexis_DHERMY.pdf" target="_blank">CV</a> &nbsp;/&nbsp;
+                    <a href="https://www.linkedin.com/in/alexis-dhermy" target="_blank">LinkedIn</a>
+                  </p>
+                  </div>
+                </td>
+                
+              </tr>
+            </tbody></table>
+
+            <!-- News Section -->
+            <table class="section-title" style="width:100%;border:0px;border-spacing:0px;border-collapse:separate;margin-right:auto;margin-left:auto;"><tbody>
+              <tr>
+                <td>
+                  <h2>News</h2>
+                </td>
+              </tr>
+            </tbody></table>
+            <table class="section-body" style="width:100%;border:0px;border-spacing:0px;border-collapse:separate;margin-right:auto;margin-left:auto;"><tbody>
+              <tr>
+                <td>
+                    🎓​ Finished my Master's thesis internship at Viridien and preparing my oral defense on August 28th.</br>
+                    🇰🇷​ Actively preparing applications for M.S. in AI in South Korea (Spring 2027 entry).</br>
+                    📖​ Currently reading <em>Build a Large Language Model (From Scratch)</em> by Sebastian Raschka.
+                </td>
+              </tr>
+            </tbody></table>
+
+            <!-- Research Interests -->
+            <table class="section-title" style="width:100%;border:0px;border-spacing:0px;border-collapse:separate;margin-right:auto;margin-left:auto;"><tbody>
+              <tr>
+                <td>
+                  <h2>Research Interests</h2>
+                </td>
+              </tr>
+            </tbody></table>
+            <table class="section-body" style="width:100%;border:0px;border-spacing:0px;border-collapse:separate;margin-right:auto;margin-left:auto;"><tbody>
+              <tr>
+                <td>
+                  <p>
+                    <strong>Generative & Agentic AI:</strong> Large Language Models (LLMs), Reasoning Models, Multi-Agent Systems, Efficient Inference. <br>
+                    <strong>Embodied AI & Robotics:</strong> Reinforcement Learning, Human-Robot Interaction, Autonomous Systems, World Models.
+                  </p>
+                </td>
+              </tr>
+            </tbody></table>
+
+            <!-- Education -->
+            <table class="section-title" style="width:100%;border:0px;border-spacing:0px;border-collapse:separate;margin-right:auto;margin-left:auto;"><tbody>
+              <tr>
+                <td>
+                  <h2>Education</h2>
+                </td>
+              </tr>
+            </tbody></table>
+            <table class="section-body" style="width:100%;border:0px;border-spacing:0px;border-collapse:separate;margin-right:auto;margin-left:auto;"><tbody>
+
+              <!-- EPF Engineering School -->
+              <tr>
+                <td style="padding:20px;width:25%;vertical-align:middle;text-align:center;">
+                  <a class="project-thumb" href="https://www.epf.fr/en" target="_blank" rel="noopener">
+                    <img src="images/EPF.png" style="max-width:140px;height:auto;" alt="EPF Engineering School">
+                  </a>
+                </td>
+                <td style="padding:20px;width:75%;vertical-align:top">
+                  <div style="margin:0;"><span class="papertitle">EPF Engineering School</span> — <span style="color:#666;">Paris-Cachan, France</span> <span style="float:right;color:#666;">2021 – 2026</span><br>
+                  <div style="margin:4px 0 0 0;"><span style="font-weight:bold;color:#2c3e50;"><em>M.S. in Engineering (French Diplôme d'Ingénieur)</em></span></div>
+                  <div style="margin:4px 0 8px 0;color:#666;"><em>Major: Intelligent Systems & Digital Technologies (AI & Cloud Computing Track)</em></div>
+                  <ul style="margin:8px 0 0 0;padding-left:20px;">
+                    <li>GPA: <strong>15.87/20</strong> | Rank: <strong>Top 3% of cohort</strong></li>
+                    <li>2-year intensive preparatory cycle (Mathematics & Physics), 1-year general engineering, 2-year specialization</li>
+                    <li>Thesis: LLM-Based RAG Architecture for Enterprise Systems (Viridien) | Advisor: Prof. Zehira Haddad</li>
+                    <li>Relevant Coursework: Generative AI, Deep Learning, Machine Learning, Probability & Statistics, Linear Algebra, Software Engineering, DevOps, Cloud Computing</li>
+                  </ul>
+                </td>
+              </tr>
+
+              <!-- Sungkyunkwan University -->
+              <tr>
+                <td style="padding:20px;width:25%;vertical-align:middle;text-align:center;">
+                  <a class="project-thumb" href="https://www.skku.edu/eng/" target="_blank" rel="noopener">
+                    <img src="images/SKKU.png" style="max-width:140px;height:auto;" alt="Sungkyunkwan University">
+                  </a>
+                </td>
+                <td style="padding:20px;width:75%;vertical-align:top">
+                  <div style="margin:0;"><span class="papertitle">Sungkyunkwan University (SKKU)</span> — <span style="color:#666;">Seoul, South Korea</span> <span style="float:right;color:#666;">Fall 2024</span><br>
+                  <div style="margin:4px 0 0 0;"><span style="font-weight:bold;color:#2c3e50;"><em>Exchange Semester in Artificial Intelligence</em></span></div>
+                  <div style="margin:4px 0 8px 0;color:#666;"><em>College of Computing and Informatics – School of Convergence</em></div>
+                  <ul style="margin:8px 0 0 0;padding-left:20px;">
+                    <li>GPA: <strong>4.10/4.5</strong></li>
+                    <li>Relevant Coursework: Reinforcement Learning, Natural Language Processing, Large Language Models, AI Search Algorithms, Data Science</li>
+                  </ul>
+                </td>
+              </tr>
+
+            </tbody></table>
+
+            <!-- Awards -->
+            <table class="section-title" style="width:100%;border:0px;border-spacing:0px;border-collapse:separate;margin-right:auto;margin-left:auto;"><tbody>
+              <tr>
+                <td>
+                  <h2>Honors & Awards</h2>
+                </td>
+              </tr>
+            </tbody></table>
+            <table class="section-body" style="width:100%;border:0px;border-spacing:0px;border-collapse:separate;margin-right:auto;margin-left:auto;"><tbody>
+              <tr>
+                <td>
+                  <ul style="margin:8px 0 0 0;padding-left:20px;">
+                    <li><strong>National Engineering Entrance Merit Distinction:</strong>
+                      <ul style="margin-top:6px;padding-left:20px;">
+                        <li>Awarded "Grand Classé" status, reserved for top-tier candidates among 10,000+ national applicants in the Concours Avenir, one of France's most competitive post-high school entrance examinations to join an engineering school.</li>
+                        <li>Granted exam-exempt direct admission to EPF Engineering School based on academic excellence.</li>
+                      </ul>
+                    </li>
+                  </ul>
+                </td>
+              </tr>
+            </tbody></table>
+
+            <!-- Professional Experience -->
+            <table class="section-title" style="width:100%;border:0px;border-spacing:0px;border-collapse:separate;margin-right:auto;margin-left:auto;"><tbody>
+                <tr>
+                <td>
+                  <h2>Professional Experience</h2>
+                </td>
+              </tr>
+            </tbody></table>
+            <table class="section-body" style="width:100%;border:0px;border-spacing:0px;border-collapse:separate;margin-right:auto;margin-left:auto;"><tbody>
+
+              <!-- Viridien Project -->
+              <tr>
+                <td style="padding:20px;width:25%;vertical-align:middle;text-align:center;">
+                  <a class="project-thumb" href="https://www.viridiengroup.com/" target="_blank" rel="noopener">
+                    <img style="width:100%;max-width:180px;height:110px;border-radius:6px;object-fit:cover;cursor:pointer;" alt="Viridien R&D" src="images/viridien.jpg">
+                  </a>
+                </td>
+                <td style="padding:20px;width:75%;vertical-align:top">
+                  <span class="papertitle">AI Software Engineer</span> — <span style="color:#666;">Viridien (R&D Department), Massy, France</span> <span style="float:right;color:#666;">Feb 2026 – Jul 2026</span><br>
+                  <em>Master's Thesis Internship</em> — <em>Advisor: Prof. Zehira Haddad</em><br>
+                  <p>
+                    Architected an advanced RAG system parsing complex geophysical documentation and DSLs, raising retrieval accuracy from 54% to 90%. Built a MCP server exposing 5 tools for LLM agent workflows and containerized the platform using Docker, Qdrant, MongoDB, and Ollama.
+                  </p>
+                </td>
+              </tr>
+
+              <!-- Air France Pepper Robot -->
+              <tr>
+                <td style="padding:20px;width:25%;vertical-align:middle;text-align:center;">
+                  <a class="project-thumb" href="images/pepper-2.jpeg" target="_blank" rel="noopener">
+                    <img style="width:100%;max-width:180px;height:110px;aspect-ratio:180/110;border-radius:6px;object-fit:cover;cursor:pointer;" alt="Pepper Robot HRI" src="images/pepper-2.jpeg">
+                  </a>
+                </td>
+                <td style="padding:20px;width:75%;vertical-align:top">
+                  <span class="papertitle">Human-Robot Interaction Developer</span> — <span style="color:#666;">Air France, Orly, France</span> <span style="float:right;color:#666;">Sep 2025 – Jan 2026</span><br>
+                  <em>Corporate Academic Project</em>
+                  <p>
+                    Engineered native Android interaction applications (Kotlin, SoftBank QiSDK) on the Pepper  humanoid robot, integrating Mistral LLMs into the dialogue pipeline for context-aware conversational flows.
+                  </p>
+                </td>
+              </tr>
+
+              <!-- EPF Projets Backend -->
+              <tr>
+                <td style="padding:20px;width:25%;vertical-align:middle;text-align:center;">
+                  <a class="project-thumb" href="https://github.com/talacata-contact/Carbon-Track" target="_blank" rel="noopener">
+                    <img style="width:100%;max-width:180px;height:110px;aspect-ratio:180/110;border-radius:6px;object-fit:cover;cursor:pointer;" alt="EPF Projets" src="images/carbon-track.jpeg">
+                  </a>
+                </td>
+                <td style="padding:20px;width:75%;vertical-align:top">
+                  <span class="papertitle">Backend & Cloud Developer</span> — <span style="color:#666;">EPF Projets, Cachan, France</span> <span style="float:right;color:#666;">Jul 2025 – Oct 2025</span><br>
+                  <em>Freelance</em>
+                  <p>
+                  Engineered REST APIs (Node.js) for a carbon-footprint mobile application integrating ADEME and Open Food Facts environmental databases. Implemented a hybrid Firebase/SQLite backend and deployed the app on the Google Play Store.
+                  </p>
+                </td>
+              </tr>
+
+            </tbody></table>
+
+            <!-- Academic Projects -->
+            <table class="section-title" style="width:100%;border:0px;border-spacing:0px;border-collapse:separate;margin-right:auto;margin-left:auto;"><tbody>
+              <tr>
+                <td>
+                  <h2>Academic Projects</h2>
+                </td>
+              </tr>
+            </tbody></table>
+            <table class="section-body" style="width:100%;border:0px;border-spacing:0px;border-collapse:separate;margin-right:auto;margin-left:auto;"><tbody>
+
+              <!-- NLP Project -->
+              <tr>
+                <td style="padding:20px;width:25%;vertical-align:middle;text-align:center;">
+                  <a class="project-thumb" href="https://github.com/Unity1202/NLP_Music_Recommendation" target="_blank" rel="noopener">
+                    <img alt="Music Recommendation NLP" src="images/word-clouds.jpeg">
+                  </a>
+                </td>
+                <td style="padding:20px;width:75%;vertical-align:top">
+                  <span class="papertitle">Music Recommendation Using NLP</span> — <span style="color:#666;">SKKU</span> <span style="float:right;color:#666;">Nov 2024 – Dec 2024</span><br>
+                  <em>Alexis DHERMY, Pablo Picó Salort</em> — <em>Professor Youngeun Koo</em><br>
+                  <p>
+                    Built an NLP-based music recommendation system using transformer models to analyze lyrics and user preferences. Achieved 82% accuracy in genre classification and implemented collaborative filtering for personalized recommendations.
+                  </p>
+                </td>
+              </tr>
+
+              <!-- RL Project -->
+              <tr>
+                <td style="padding:20px;width:25%;vertical-align:middle;text-align:center;">
+                  <a class="project-thumb" href="https://canva.link/3pamyqgl2fzn1o7" target="_blank" rel="noopener">
+                    <img alt="Bipedal Locomotion RL" src="images/bipedal_walker.gif">
+                  </a>
+                </td>
+                <td style="padding:20px;width:75%;vertical-align:top">
+                  <span class="papertitle">Teaching a Robot to Walk with Reinforcement Learning</span> — <span style="color:#666;">SKKU</span> <span style="float:right;color:#666;">Nov 2024 – Dec 2024</span><br>
+                  <em>Alexis DHERMY, 양대찬, 김정연</em> — <em>Professor Jaekwang Kim</em><br>
+                  <p>
+                  Trained a 2D bipedal robot in Gymnasium with custom reward shaping (optimizing speed, forward progress, and joint stability), achieving 3x the walking distance over baseline A2C. Implemented PPO to mitigate policy collapse, boosting average episode moving distance by 132%.
+                  </p>
+                </td>
+              </tr>
+
+            <!-- Miscellany Section -->
+            <table class="section-title" style="width:100%;border:0px;border-spacing:0px;border-collapse:separate;margin-right:auto;margin-left:auto;"><tbody>
+              <tr>
+                <td>
+                  <h2>Miscellany</h2>
+                </td>
+              </tr>
+            </tbody></table>
+            <table class="section-body" style="width:100%;border:0px;border-spacing:0px;border-collapse:separate;margin-right:auto;margin-left:auto;"><tbody>
+              
+            <!-- Athletics Subsection -->
+            <tr>
+              <td style="padding:20px;width:25%;vertical-align:middle;text-align:center;">
+                <img style="width:100%;max-width:180px;border-radius:6px;object-fit:cover;" alt="track and field" src="images/track.jpg">
+              </td>
+              <td style="padding:20px;width:75%;vertical-align:top">
+                <span class="papertitle">Track & Field — Sprint & Long Jump</span>
+                <p>
+                I have been training and competing in track & field for over a decade with the Plessis-Robinson Athletic Club (PRAC), specializing in the 100m, 200m, and long jump.
+                </p>
+                <ul style="margin-top:6px;padding-left:20px;">
+                  <li>Titles: Hauts-de-Seine Long Jump Champion (2025), Île-de-France Long Jump Vice-Champion (2023)</li>
+                  <li>Personal Bests: 100m: 11.29s (IR2) | 200m: 23.27s (IR4) | Long Jump: 6.24m (R1)</li>
+                </ul>
+              </td>
+            </tr>
+
+            <!-- Reading Subsection -->
+            <tr>
+              <td style="padding:20px;width:25%;vertical-align:middle;text-align:center;">
+                <img style="width:100%;max-width:180px;border-radius:6px;object-fit:cover;" alt="build a large language model book" src="images/llm-book.jpg">
+              </td>
+              <td style="padding:20px;width:75%;vertical-align:top">
+                <span class="papertitle">Selected Bookshelf</span>
+                <ul style="margin-top:6px;padding-left:20px;">
+                  <li><em>Build a Large Language Model (From Scratch)</em> — Sebastian Raschka</li>
+                  <li><em>Deep Learning with Python</em> — François Chollet, Matthew Watson</li>
+                  <li><em>Build a Reasoning Model (From Scratch)</em> — Sebastian Raschka</li>
+                </ul>
+              </td>
+            </tr>
+
+            <!-- Travel & Exploration Subsection -->
+            <tr>
+              <td style="padding:20px;width:25%;vertical-align:middle;text-align:center;">
+                <img style="width:100%;max-width:180px;border-radius:6px;object-fit:cover;" alt="Seoul skyline" src="images/seoul.jpg">
+              </td>
+              <td style="padding:20px;width:75%;vertical-align:top">
+                <span class="papertitle">Travel & Cultural Immersion</span>
+                <p>
+                  Passionate about exploring new cultures and perspectives. Having lived and studied in Seoul during my exchange at SKKU, I developed a strong appreciation for South Korea's dynamic research culture, environment, and daily life.
+                </p>
+              </td>
+            </tr>
+
+            </tbody></table>
+
+            <!-- Footer -->
+            <table style="width:100%;border:0px;border-spacing:0px;border-collapse:separate;margin-right:auto;margin-left:auto;"><tbody>
+              <tr>
+                <td style="padding:20px;font-size:small;text-align:center;color:#888;">
+                  Template adapted from <a href="https://github.com/jonbarron/jonbarron.github.io" style="color:#888;">Jon Barron</a>.
+                </td>
+              </tr>
+            </tbody></table>
+
+          </td>
+        </tr>
+      </tbody></table>
+    </div>
+
+    <!-- set badge date + theme script -->
+    <script>
+    (function(){
+      const manualDate = 'August 17, 2026';
+
+      const badge = document.getElementById('last-updates');
+      if (badge) badge.textContent = 'Last updated: ' + manualDate;
+
+      const root = document.documentElement;
+      const btn = document.getElementById('theme-toggle');
+      const stored = localStorage.getItem('site-theme');
+      const apply = (mode) => {
+        if (mode === 'dark') root.classList.add('dark');
+        else root.classList.remove('dark');
+
+        if (btn) {
+          btn.textContent = mode === 'dark' ? 'Light' : 'Dark';
+          btn.setAttribute('aria-pressed', mode === 'dark' ? 'true' : 'false');
+        }
+      };
+
+      apply(stored === 'dark' ? 'dark' : 'light');
+
+      if (btn) {
+        btn.addEventListener('click', () => {
+          const isDark = root.classList.toggle('dark');
+          const mode = isDark ? 'dark' : 'light';
+          localStorage.setItem('site-theme', mode);
+          apply(mode);
+        });
+      }
+    })();
+    </script>
+  </body>
+</html>
