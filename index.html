@@ -163,10 +163,28 @@
     .dark .top-control {
       border-color: rgba(255,255,255,0.18);
     }
+
+    html {
+      scroll-behavior: smooth;
+      scroll-padding-top: 58px;
+    }
     </style>
   </head>
 
   <body>
+    <nav class="site-nav" aria-label="Page sections">
+      <div class="site-nav-inner">
+        <a href="#about">About</a>
+        <a href="#news">News</a>
+        <a href="#research">Research Interest</a>
+        <a href="#education">Education</a>
+        <a href="#awards">Awards</a>
+        <a href="#experience">Experience</a>
+        <a href="#projects">Projects</a>
+        <a href="#miscellany">Miscellany</a>
+      </div>
+    </nav>
+
     <!-- wrap page content so badge aligns to content, not viewport -->
     <div class="page-wrap">
       <div class="top-controls">
@@ -179,17 +197,21 @@
           <td style="padding:0px">
             
             <!-- Header / Intro Section -->
-            <table style="width:100%;border:0px;border-spacing:0px;border-collapse:separate;margin-right:auto;margin-left:auto;"><tbody>
+            <table id="about" style="width:100%;border:0px;border-spacing:0px;border-collapse:separate;margin-right:auto;margin-left:auto;"><tbody>
               <tr style="padding:0px">
 
                 <!-- Left Column: Bio Text -->
                 <td style="padding:2.5%;width:60%;vertical-align:middle">
-                  <p class="name" style="text-align: center;">
-                    Alexis DHERMY
-                  </p>
+                <p class="name" style="text-align: center; margin-bottom: 20px;">
+                  Alexis DHERMY<br>
+                  <span style="display: block; font-size: 15px; font-weight: normal; color: #666; margin-top: 6px;">
+                    AI Engineer &amp; Aspiring AI Researcher
+                  </span>
+                </p>
                   <p>
                     Bonjour! 🇫🇷<br>
-                    I am a final-year graduate student finishing my Master of Science in Engineering at <a href="https://www.epf.fr/en" target="_blank"><strong>EPF Engineering School</strong></a> (Paris, France), specializing in Computer Science and Artificial Intelligence.
+                    I am a recent graduate with a Master of Science in Engineering from <a href="https://www.epf.fr/en" target="_blank"><strong>EPF Graduate School
+                    of Engineering</strong></a> (Paris, France), specializing in Computer Science and Artificial Intelligence.
                   </p>
                   <p>
                     Following a strong foundation in mathematics and physics through an intensive preparatory cycle, I built my core AI foundations during an exchange semester at <a href="https://www.skku.edu/eng/" target="_blank"><strong>Sungkyunkwan University (SKKU)</strong></a> in Seoul.
@@ -225,7 +247,7 @@
             </tbody></table>
 
             <!-- News Section -->
-            <table class="section-title" style="width:100%;border:0px;border-spacing:0px;border-collapse:separate;margin-right:auto;margin-left:auto;"><tbody>
+            <table id="news" class="section-title" style="width:100%;border:0px;border-spacing:0px;border-collapse:separate;margin-right:auto;margin-left:auto;"><tbody>
               <tr>
                 <td>
                   <h2>News</h2>
@@ -235,7 +257,7 @@
             <table class="section-body" style="width:100%;border:0px;border-spacing:0px;border-collapse:separate;margin-right:auto;margin-left:auto;"><tbody>
               <tr>
                 <td>
-                    🎓​ Finished my Master's thesis internship at Viridien and preparing my oral defense on August 28th.<br><br>
+                    🎓​ Successfully completed my Master's thesis internship at Viridien and passed my oral defense (M.S. in Engineering degree conferral in December).<br><br>
                     🇰🇷​ Actively preparing applications for M.S. in AI in South Korea (Spring 2027 entry).<br><br>
                     📖​ Currently reading <em>Build a Large Language Model (From Scratch)</em> by Sebastian Raschka.
                 </td>
@@ -243,7 +265,7 @@
             </tbody></table>
 
             <!-- Research Interests -->
-            <table class="section-title" style="width:100%;border:0px;border-spacing:0px;border-collapse:separate;margin-right:auto;margin-left:auto;"><tbody>
+            <table id="research" class="section-title" style="width:100%;border:0px;border-spacing:0px;border-collapse:separate;margin-right:auto;margin-left:auto;"><tbody>
               <tr>
                 <td>
                   <h2>Research Interests</h2>
@@ -262,7 +284,7 @@
             </tbody></table>
 
             <!-- Education -->
-            <table class="section-title" style="width:100%;border:0px;border-spacing:0px;border-collapse:separate;margin-right:auto;margin-left:auto;"><tbody>
+            <table id="education" class="section-title" style="width:100%;border:0px;border-spacing:0px;border-collapse:separate;margin-right:auto;margin-left:auto;"><tbody>
               <tr>
                 <td>
                   <h2>Education</h2>
@@ -281,12 +303,12 @@
                 <td style="padding:20px;width:75%;vertical-align:top">
                   <div style="margin:0;"><span class="papertitle">EPF Engineering School</span> — <span style="color:#666;">Paris-Cachan, France</span> <span style="float:right;color:#666;">2021 – 2026</span><br>
                   <div style="margin:4px 0 0 0;"><span style="font-weight:bold;color:#2c3e50;"><em>M.S. in Engineering (French Diplôme d'Ingénieur)</em></span></div>
-                  <div style="margin:4px 0 8px 0;color:#666;"><em>Major: Intelligent Systems & Digital Technologies – AI & Cloud Computing Track</em></div>
+                  <div style="margin:4px 0 8px 0;color:#666;"><em>Major: Intelligent Systems & Digital Technologies | Track: Artificial Intelligence & Cloud Computing</em></div>
                   <ul style="margin:8px 0 0 0;padding-left:20px;">
-                    <li>GPA: <strong>15.87/20</strong> | Rank: <strong>Top 3% of cohort</strong> – 16/276 (Y4), 6/206 (Y3), 4/178 (Y2), 4/217 (Y1)</li>
+                    <li>GPA: <strong>16.19/20</strong> | Rank: <strong>Top 3% of cohort</strong> – 16/276 (Y4), 6/206 (Y3), 4/178 (Y2), 4/217 (Y1)</li>
                     <li>2-year intensive preparatory cycle (Mathematics & Physics), 1-year general engineering, 2-year specialization (CS & AI)</li>
                     <li>Thesis: LLM-Based RAG Architecture for Enterprise Systems (Viridien) – Advisor: Prof. Zehira Haddad</li>
-                    <li>Relevant Coursework: Generative AI, Deep Learning, Machine Learning, Probability & Statistics, Linear Algebra, Software Engineering, DevOps, Cloud Computing</li>
+                    <li>Relevant Coursework: Generative AI, Deep Learning, Machine Learning, Probability & Statistics, Linear Algebra, Calculus, Software Engineering, DevOps, Cloud Computing</li>
                   </ul>
                 </td>
               </tr>
@@ -300,11 +322,11 @@
                 </td>
                 <td style="padding:20px;width:75%;vertical-align:top">
                   <div style="margin:0;"><span class="papertitle">Sungkyunkwan University (SKKU)</span> — <span style="color:#666;">Seoul, South Korea</span> <span style="float:right;color:#666;">Fall 2024</span><br>
-                  <div style="margin:4px 0 0 0;"><span style="font-weight:bold;color:#2c3e50;"><em>Exchange Semester in Artificial Intelligence</em></span></div>
-                  <div style="margin:4px 0 8px 0;color:#666;"><em>College of Computing and Informatics – School of Convergence</em></div>
+                  <div style="margin:4px 0 0 0;"><span style="font-weight:bold;color:#2c3e50;"><em>Exchange Semester</em></span></div>
+                  <div style="margin:4px 0 8px 0;color:#666;"><em>College: Computing and Informatics | Department: Convergence, Applied Artificial Intelligence</em></div>
                   <ul style="margin:8px 0 0 0;padding-left:20px;">
                     <li>GPA: <strong>4.10/4.5</strong></li>
-                    <li>Relevant Coursework: Reinforcement Learning, Natural Language Processing, Large Language Models, AI Search Algorithms, Data Science</li>
+                    <li>Relevant Coursework: Introduction to Artificial Intelligence, Introduction to Reinforcement Learning, Culture Data and Machine Learning, Language Technology and Cultural Content</li>
                   </ul>
                 </td>
               </tr>
@@ -312,7 +334,7 @@
             </tbody></table>
 
             <!-- Awards -->
-            <table class="section-title" style="width:100%;border:0px;border-spacing:0px;border-collapse:separate;margin-right:auto;margin-left:auto;"><tbody>
+            <table id="awards" class="section-title" style="width:100%;border:0px;border-spacing:0px;border-collapse:separate;margin-right:auto;margin-left:auto;"><tbody>
               <tr>
                 <td>
                   <h2>Honors & Awards</h2>
@@ -335,7 +357,7 @@
             </tbody></table>
 
             <!-- Professional Experience -->
-            <table class="section-title" style="width:100%;border:0px;border-spacing:0px;border-collapse:separate;margin-right:auto;margin-left:auto;"><tbody>
+            <table id="experience" class="section-title" style="width:100%;border:0px;border-spacing:0px;border-collapse:separate;margin-right:auto;margin-left:auto;"><tbody>
                 <tr>
                 <td>
                   <h2>Professional Experience</h2>
@@ -395,7 +417,7 @@
             </tbody></table>
 
             <!-- Academic Projects -->
-            <table class="section-title" style="width:100%;border:0px;border-spacing:0px;border-collapse:separate;margin-right:auto;margin-left:auto;"><tbody>
+            <table id="projects" class="section-title" style="width:100%;border:0px;border-spacing:0px;border-collapse:separate;margin-right:auto;margin-left:auto;"><tbody>
               <tr>
                 <td>
                   <h2>Academic Projects</h2>
@@ -437,7 +459,7 @@
               </tr>
 
             <!-- Miscellany Section -->
-            <table class="section-title" style="width:100%;border:0px;border-spacing:0px;border-collapse:separate;margin-right:auto;margin-left:auto;"><tbody>
+            <table id="miscellany" class="section-title" style="width:100%;border:0px;border-spacing:0px;border-collapse:separate;margin-right:auto;margin-left:auto;"><tbody>
               <tr>
                 <td>
                   <h2>Miscellany</h2>
@@ -510,7 +532,7 @@
     <!-- set badge date + theme script -->
     <script>
     (function(){
-      const manualDate = 'August 17, 2026';
+      const manualDate = 'September 3, 2026';
 
       const badge = document.getElementById('last-updates');
       if (badge) badge.textContent = 'Last updated: ' + manualDate;
